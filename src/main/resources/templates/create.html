@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Creating Buddies</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Submit a Buddy!</h1>
+<form action="#" th:action="@{/create}" th:object="${greeting}" method="post">
+    <p>Name: <input type="text" th:field="*{id}" /></p>
+    <p>Phone Number: <input type="text" th:field="*{content}" /></p>
+    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+</form>
+<a href="/switch">Change AddressBook!</a>
+</body>
+</html>
