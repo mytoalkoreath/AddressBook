@@ -56,6 +56,36 @@ public class TestingWebApplicationTest {
                 .param("Id", "Frank"))
                 .andDo(print()).andExpect(status().isOk()).andExpect(content()
                 .string(containsString("George")));
+        this.mockMvc.perform(post("/switch")
+                .contentType(MediaType.APPLICATION_FORM_URLENCODED)
+                .param("Id", "Book2"))
+                .andDo(print()).andExpect(status().isOk()).andExpect(content()
+                .string(containsString("AddressBook Switched")));
+        this.mockMvc.perform(post("/create")
+                .contentType(MediaType.APPLICATION_FORM_URLENCODED)
+                .param("Id", "Frank")
+                .param("content", "123")
+                .param("address", "1234 test ave"))
+                .andDo(print()).andExpect(status().isOk()).andExpect(content()
+                .string(containsString("Frank")));
+        this.mockMvc.perform(post("/delete")
+                .contentType(MediaType.APPLICATION_FORM_URLENCODED)
+                .param("Id", "George"))
+                .andDo(print()).andExpect(status().isOk()).andExpect(content()
+                .string(containsString("Frank")));
+        this.mockMvc.perform(post("/switch")
+                .contentType(MediaType.APPLICATION_FORM_URLENCODED)
+                .param("Id", "Book1"))
+                .andDo(print()).andExpect(status().isOk()).andExpect(content()
+                .string(containsString("AddressBook Switched")));
+        this.mockMvc.perform(post("/create")
+                .contentType(MediaType.APPLICATION_FORM_URLENCODED)
+                .param("Id", "Test")
+                .param("content", "123")
+                .param("address", "1234 test ave"))
+                .andDo(print()).andExpect(status().isOk()).andExpect(content()
+                .string(containsString("George")));
+
 
 
 
