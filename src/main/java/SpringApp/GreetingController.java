@@ -27,7 +27,7 @@ public class GreetingController {
     }
 
 
-    @GetMapping("/start")
+    @GetMapping("/")
     public String createAB(Model model){
         model.addAttribute("greeting", new Greeting());
         return "start";
@@ -52,7 +52,7 @@ public class GreetingController {
         return "delete";
     }
 
-    @PostMapping("/start")
+    @PostMapping("/")
     public String startSubmit(@ModelAttribute Greeting greeting, Model m) {
         AddressBook a = new AddressBook();
         a.setName(greeting.getId());
