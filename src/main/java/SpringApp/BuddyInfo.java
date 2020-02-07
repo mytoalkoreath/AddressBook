@@ -9,26 +9,30 @@ import javax.persistence.Id;
 public class BuddyInfo {
     private String pNumber;
     private String name;
+    private String address;
     private Long id;
 
     public BuddyInfo(){
         name = "test";
         pNumber = "test";
+        address = "test";
     }
 
     @Override
     public String toString() {
         return "BuddyInfo{" +
-                "pNumber='" + pNumber + '\'' +
-                ", name='" + name + '\'' +
+                "name='" + name + '\'' +
+                ", pNumber='" + pNumber + '\'' +
+                ", address='" + address + '\'' +
                 '}';
     }
 
 
 
-    public BuddyInfo(String name, String pNumber) {
+    public BuddyInfo(String name, String pNumber, String add) {
         this.name = name;
         this.pNumber = pNumber;
+        this.address = add;
     }
 
 
@@ -37,7 +41,6 @@ public class BuddyInfo {
     public Long getId() {
         return this.id;
     }
-
 
     public void setId(Long id) {
         this.id = id;
@@ -57,5 +60,13 @@ public class BuddyInfo {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getAddress(){
+        return address;
+    }
+
+    public void setAddress(String add){
+        this.address=add;
     }
 }

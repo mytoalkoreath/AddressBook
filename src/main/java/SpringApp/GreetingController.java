@@ -80,7 +80,7 @@ public class GreetingController {
     @PostMapping("/create")
     public String createSubmit(@ModelAttribute Greeting greeting, Model m) {
         AddressBook a = rep.findByName(currName);
-        BuddyInfo b = new BuddyInfo(greeting.getId(), greeting.getContent());
+        BuddyInfo b = new BuddyInfo(greeting.getId(), greeting.getContent(), greeting.getAddress());
         a.addBuddy(b);
 
         m.addAttribute("Book1", a);

@@ -27,9 +27,9 @@ public class AddressBook {
         Name = name;
     }
 
-    public void addBuddy(String name, String pNumber){
+    public void addBuddy(String name, String pNumber, String add){
 
-        buddies.add(new BuddyInfo(name, pNumber));
+        buddies.add(new BuddyInfo(name, pNumber, add));
     }
 
     public void addBuddy(BuddyInfo buddy){
